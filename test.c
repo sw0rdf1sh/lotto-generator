@@ -12,12 +12,12 @@ int main(int argc, const char * argv[])
     int num2;
     int counter; 
 
-        a = arc4random() % 49 + 1;      //
+        a = arc4random() % 49 + 1;      // get a random number between 1 and 49.
         
             myArray[0] = a;
         
         do {
-            b=arc4random() % 49 +1;
+            b=arc4random() % 49 +1;     // to ensure the numbers are unique (picking a number without replacement)
         } while (b==a);
             myArray[1] = b;
  
@@ -42,7 +42,7 @@ int main(int argc, const char * argv[])
         myArray[5] = f;
 
 start:
-        if (counter < 6)    {   // counter needs to be 6 as there needs to be 5 iterations in the for loop.
+        if (counter < 6)    {   // 6 as there needs to be 5 iterations in the for loop to sort numbers in ascending order.
             goto begin;
 
         }   else {
@@ -56,10 +56,10 @@ begin:
                 ptr1 = &myArray[i];    // pointer to memory address of e.g myArray[0]
                 ptr2 = &myArray[(i + 1)];
 
-                    num1 = *ptr1;
+                    num1 = *ptr1;      
                     num2 = *ptr2;
 
-                    *ptr1 = num2;
+                    *ptr1 = num2;       //switch the values
                     *ptr2 = num1;
             }       
                 }
